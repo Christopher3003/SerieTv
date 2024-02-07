@@ -1,0 +1,92 @@
+﻿@using ITLATv.Application.ViewModels.Serie;
+
+@model SerieSaveViewModel
+@{
+    
+    bool editMode;
+    if (Model != null)
+    {
+        editMode = Model.Id == 0 ? false : true;
+    }
+    else
+    {
+        editMode = false;
+    }
+
+    ViewData["Title"] = (editMode ? "Serie || Actualizar" : "Serie || Agregar");
+
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    @if((Model.Genders == null || Model.Genders.Count <= 0) || (Model.Producters == null || Model.Producters.Count <=0)){
+                        <h1>Necesita crear Generos o Productoras</h1>
+                    }
+                    else{
+                    <h1 class="card-title text-center">@(editMode ? "Actualizando Serie" : "Creando Nueva Serie")</h1>
+                    <form method="post" asp-controller="Serie" asp-action="@(editMode ? "Update" : "Add")">
+                        <div class="form-group">
+                            <label asp-for="Name">Nombre:</label>
+                            <input type="text" class="form-control" id="Name" asp-for="Name">
+                            <span class="text-danger" asp-validation-for="Name"></span>
+                        </div>
+                            <div class="form-group">
+                                <label asp-for="ImageURL">Imagen de portada:</label>
+                                <input type="text" class="form-control" asp-for="ImageURL">
+                                <span class="text-danger" asp-validation-for="ImageURL"></span>
+
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="VideoURL">Link del Video:</label>
+                                <input type="text" class="form-control" asp-for="VideoURL">
+                                <span class="text-danger" asp-validation-for="VideoURL"></span>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="ProducterId">Productora:</label>
+                                <select class="form-select" asp-for="ProducterId" asp-items="@(new SelectList(Model.Producters, "Id", "Name"))">
+                                    <option value=" ">--Seleccione--</option>
+                                </select>
+                                <span class="text-danger" asp-validation-for="ProducterId"></span>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="GenderId">Genero primario:</label>
+                                <select class="form-select" asp-for="GenderId" asp-items="@(new SelectList(Model.Genders, "Id", "Name"))">
+                                    <option value=" ">--Seleccione--</option>
+                                </select>
+                                <span class="text-danger" asp-validation-for="GenderId"></span>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="SecondaryGenderId">Genero Secundario:</label>
+                                <select class="form-select" asp-for="SecondaryGenderId" asp-items="@(new SelectList(Model.Genders, "Id", "Name"))">
+                                    <option value=" ">--Seleccione--</option>
+                                </select>
+
+                            </div>
+                        <div class="form-group">
+                            <input type="hidden" asp-for="Id">
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary">
+                                @(editMode ? "Guardar" : "Agregar")
+                            </button>
+                            <a class="btn btn-warning ml-2" asp-controller="Serie" asp-action="Index">Volver atrás</a>
+                        </div>
+                    </form>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

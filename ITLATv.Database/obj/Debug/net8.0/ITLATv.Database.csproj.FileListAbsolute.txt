@@ -1,0 +1,28 @@
+C:\Users\User\source\repos\ITLATv\ITLATv.Database\bin\Debug\net8.0\ITLATv.Database.deps.json
+C:\Users\User\source\repos\ITLATv\ITLATv.Database\bin\Debug\net8.0\ITLATv.Database.runtimeconfig.json
+C:\Users\User\source\repos\ITLATv\ITLATv.Database\bin\Debug\net8.0\ITLATv.Database.dll
+C:\Users\User\source\repos\ITLATv\ITLATv.Database\bin\Debug\net8.0\ITLATv.Database.pdb
+C:\Users\User\source\repos\ITLATv\ITLATv.Database\obj\Debug\net8.0\ITLATv.Database.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\ITLATv\ITLATv.Database\obj\Debug\net8.0\ITLATv.Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\ITLATv\ITLATv.Database\obj\Debug\net8.0\ITLATv.Database.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\ITLATv\ITLATv.Database\obj\Debug\net8.0\ITLATv.Database.AssemblyInfo.cs
+C:\Users\User\source\repos\ITLATv\ITLATv.Database\obj\Debug\net8.0\ITLATv.Database.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\ITLATv\ITLATv.Database\obj\Debug\net8.0\ITLATv.Database.dll
+C:\Users\User\source\repos\ITLATv\ITLATv.Database\obj\Debug\net8.0\refint\ITLATv.Database.dll
+C:\Users\User\source\repos\ITLATv\ITLATv.Database\obj\Debug\net8.0\ITLATv.Database.pdb
+C:\Users\User\source\repos\ITLATv\ITLATv.Database\obj\Debug\net8.0\ITLATv.Database.genruntimeconfig.cache
+C:\Users\User\source\repos\ITLATv\ITLATv.Database\obj\Debug\net8.0\ref\ITLATv.Database.dll
+C:\Users\User\Desktop\Leonardo's class\Homeworks\ITLATv\ITLATv.Database\bin\Debug\net8.0\ITLATv.Database.deps.json
+C:\Users\User\Desktop\Leonardo's class\Homeworks\ITLATv\ITLATv.Database\bin\Debug\net8.0\ITLATv.Database.runtimeconfig.json
+C:\Users\User\Desktop\Leonardo's class\Homeworks\ITLATv\ITLATv.Database\bin\Debug\net8.0\ITLATv.Database.dll
+C:\Users\User\Desktop\Leonardo's class\Homeworks\ITLATv\ITLATv.Database\bin\Debug\net8.0\ITLATv.Database.pdb
+C:\Users\User\Desktop\Leonardo's class\Homeworks\ITLATv\ITLATv.Database\obj\Debug\net8.0\ITLATv.Database.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Leonardo's class\Homeworks\ITLATv\ITLATv.Database\obj\Debug\net8.0\ITLATv.Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Leonardo's class\Homeworks\ITLATv\ITLATv.Database\obj\Debug\net8.0\ITLATv.Database.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Leonardo's class\Homeworks\ITLATv\ITLATv.Database\obj\Debug\net8.0\ITLATv.Database.AssemblyInfo.cs
+C:\Users\User\Desktop\Leonardo's class\Homeworks\ITLATv\ITLATv.Database\obj\Debug\net8.0\ITLATv.Database.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Leonardo's class\Homeworks\ITLATv\ITLATv.Database\obj\Debug\net8.0\ITLATv.Database.dll
+C:\Users\User\Desktop\Leonardo's class\Homeworks\ITLATv\ITLATv.Database\obj\Debug\net8.0\refint\ITLATv.Database.dll
+C:\Users\User\Desktop\Leonardo's class\Homeworks\ITLATv\ITLATv.Database\obj\Debug\net8.0\ITLATv.Database.pdb
+C:\Users\User\Desktop\Leonardo's class\Homeworks\ITLATv\ITLATv.Database\obj\Debug\net8.0\ITLATv.Database.genruntimeconfig.cache
+C:\Users\User\Desktop\Leonardo's class\Homeworks\ITLATv\ITLATv.Database\obj\Debug\net8.0\ref\ITLATv.Database.dll

@@ -1,0 +1,118 @@
+﻿@using ITLATv.Application.ViewModels.Serie
+@using ITLATv.Application.ViewModels.Gender
+@using ITLATv.Application.ViewModels.Producter
+@model List<SerieViewModel>
+@{
+    ViewData["Title"] = "Series";
+}
+
+
+
+
+<div class="row">
+    <div class="col-2">
+        <div class="card">
+            <div class="bg-dark text-white text-center card-header">
+                <label>Filtrar por género:</label>
+            </div>
+            <div class="card-body border-5">
+                <form asp-controller="Home" asp-action="Index" method="post">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="All" name="GenderId" value="null">
+                        <label class="form-check-label" for="All">Todos</label>
+                    </div>
+                    @foreach (GenderViewModel gender in ViewBag.Genders)
+                    {
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="gender-@gender.Id" name="GenderId" value="@gender.Id">
+                            <label class="form-check-label" for="gender-@gender.Id">@gender.Name</label>
+                        </div>
+                    }
+                    <button type="submit" class="btn btn-info">Filtrar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mt-3">
+            <div class="bg-dark text-white text-center card-header">
+                <label>Filtrar por Productora:</label>
+            </div>
+            <div class="card-body border-5">
+                <form asp-controller="Home" asp-action="Index" method="post">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="All" name="ProducterId" value="null">
+                        <label class="form-check-label" for="All">Todos</label>
+                    </div>
+                    @foreach (ProducterViewModel producter in ViewBag.Producters)
+                    {
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="producter-@producter.Id" name="ProducterId" value="@producter.Id">
+                            <label class="form-check-label" for="producter-@producter.Id">@producter.Name</label>
+                        </div>
+                    }
+                    <button type="submit" class="btn btn-info">Filtrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-10">
+        <div class="container">
+            <div class="text-center mb-1 mt-2">
+                <h3>Series</h3>
+            </div>
+
+            <div class="d-flex flex-row">
+                <div class="col-lg-6 offset-3">
+                    <form class="mb-5" method="post" asp-controller="Home" asp-action="Index">
+                        <div class="row-cols-md-1">
+                            <input class="form-control" type="search" name="name" id="name" placeholder="Buscar" aria-label="Buscar">
+                        </div>
+                        <div class="row-cols-1">
+                            <button class="btn btn-outline-success" type="submit">Buscar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-3">
+                @if (Model.Count == 0 || Model == null)
+                {
+                    <div class="col">
+                        <h1>No hay ningún elemento en la base de datos</h1>
+                    </div>
+                }
+                else
+                {
+                    @foreach (var item in Model)
+                    {
+                        <div class="col">
+                            <div class="col">
+                                <div class="card shadow-sm">
+                                    <img class="bd-placeholder-img card-img-top" src="@item.ImageURL" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                    <div class="card-body">
+                                        <h4>@item.Name</h4>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <a asp-controller="Home" asp-action="Watch" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info">Ver</a>
+                                            </div>
+                                        </div>
+                                        <small class="text-body-secondary"><b>Productora</b> @item.ProducterName</small>
+                                        <br />
+                                        <small class="text-body-secondary"><b>Genero primario:</b> @item.GenderName</small>
+                                        <br />
+                                        @if (item.SecondayGenderName != null)
+                                        {
+                                            <small class="text-body-secondary"><b>Genero secundario:</b> @item.SecondayGenderName</small>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

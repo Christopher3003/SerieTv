@@ -1,0 +1,47 @@
+﻿@using ITLATv.Application.ViewModels.Gender;
+@model GenderSaveViewModel
+@{
+    
+    bool editMode;
+    if (Model != null)
+    {
+        editMode = Model.Id == 0 ? false : true;
+    }
+    else
+    {
+        editMode = false;
+    }
+
+    ViewData["Title"] = (editMode ? "Genero || Actualizar" : "Genero || Agregar");
+
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title text-center">@(editMode ? "Actualizando Genero" : "Creando Nuevo Genero")</h1>
+                    <form method="post" asp-controller="Gender" asp-action="@(editMode ? "Update" : "Add")">
+                        <div class="form-group">
+                            <label for="Name">Nombre:</label>
+                            <input type="text" class="form-control" asp-for="Name">
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" asp-for="Id">
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary">
+                                @(editMode ? "Guardar" : "Agregar")
+                            </button>
+                            <a class="btn btn-warning ml-2" asp-controller="Gender" asp-action="Index">Volver atrás</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

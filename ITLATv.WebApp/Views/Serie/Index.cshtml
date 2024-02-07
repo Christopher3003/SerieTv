@@ -1,0 +1,60 @@
+﻿@using ITLATv.Application.ViewModels.Serie
+@model List<SerieViewModel>
+@{
+    ViewData["Title"] = "Mant. Series";
+}
+<div class="text-center">
+    <h3>Mantenimiento de series</h3>
+    <p>En esta seccion puede crear, actualizar y eliminar series</p>
+</div>
+
+<div class="mg-3">
+    <div>
+        <a class="btn btn-outline-success mb-5 col-lg-6 offset-3" asp-controller="Serie" asp-action="Add">Agregar Serie</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-9">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-3 g-3">
+                
+                @if (Model.Count == 0 || Model == null)
+                {
+                    <div class="col">
+                        <h1>No hay ningún elemento en la base de datos</h1>
+                    </div>
+                }
+                else
+                {
+                    @foreach (var item in Model)
+                    {
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <img class="bd-placeholder-img card-img-top" src="@item.ImageURL" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <div class="card-body">
+                                    <h4>@item.Name</h4>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <a asp-controller="Serie" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">Borrar</a>
+                                            <a asp-controller="Serie" asp-action="Update" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info">Editar</a>
+                                        </div>
+                                        <br />
+                                    </div>
+                                    <p><b>Productora:</b> @item.ProducterName</p>
+                                    <p><b>Generos: </b> @item.GenderName @if(item.SecondayGenderName != null)
+                                        {
+                                            @item.SecondayGenderName
+                                        }
+                                </div>
+                                
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+</div>
+
